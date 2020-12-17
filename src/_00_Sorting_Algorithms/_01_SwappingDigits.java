@@ -20,8 +20,8 @@ class _01_SwappingDigits {
 		sortIntArray(z);
 		assertArrayEquals(q, z);
 
-//		int[] m = { 7, 3, 9, 5, 2 };
-//		assertEquals(5, findMiddle(m));
+		int[] m = { 7, 3, 9, 5, 2 };
+		assertEquals(5, findMiddle(m));
 	}
 
 	// 1. Complete the method so that the first two elements of the array are
@@ -36,13 +36,32 @@ class _01_SwappingDigits {
 	// Iterate through the array and when you find two elements that are out
 	// of order, swap them. Repeat this until the array is in order.
 	public static void sortIntArray(int[] arr) {
-
+		int num = 0;
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 1; j < arr.length-i; j++) {
+				if (arr[j-1] > arr[j]) {
+					num = arr[j-1];
+					arr[j-1] = arr[j];
+					arr[j] = num;
+				}
+			}
+		}
 	}
 
 	// 3. Complete the method so that it finds the middle number in the array.
 	// *Hint* it helps to sort it first.
 	// *Double Hint* Use the method you already wrote in step 2 to sort it
 	public static int findMiddle(int[] arr) {
-		return 0;
+		int num = 0;
+		for (int i = 0; i < arr.length; i++) {
+			for (int j = 1; j < arr.length-i; j++) {
+				if (arr[j-1] > arr[j]) {
+					num = arr[j-1];
+					arr[j-1] = arr[j];
+					arr[j] = num;
+				}
+			}
+		}
+		return arr[arr.length - (arr.length/2)-1];
 	}
 }

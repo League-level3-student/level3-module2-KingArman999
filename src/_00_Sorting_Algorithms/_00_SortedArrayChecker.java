@@ -8,18 +8,13 @@ public class _00_SortedArrayChecker {
 	// and it returns a boolean.
 	// The method returns true if the integer
 	// array is in ascending order and false otherwise
-
 	static boolean intArraySorted(int[] array) {
-		boolean t = false;
-		for (int i = 0; i < array.length; i++) {
-			System.out.println(array[i]+ " , " + array[i+1]);
-			if (array[i] < array[i]) {
-				t = true;
-			} else {
-				t = false;
+		for (int i = 1; i < array.length; i++) {
+			if (array[i] < array[i - 1]) {
+				return false;
 			}
 		}
-		return t;
+		return true;
 	}
 
 	// 2. Write a static method called doubleArraySorted.
@@ -28,14 +23,14 @@ public class _00_SortedArrayChecker {
 	// The method returns true if the double
 	// array is in ascending order and false otherwise
 	static boolean doubleArraySorted(double[] array) {
-		boolean t = false;
-		for (int i = 0; i < array.length; i++) {
-			if (array[i] > array[i + 1]) {
-				t = true;
+		for (int i = 1; i < array.length; i++) {
+			if (array[i] < array[i - 1]) {
+				return false;
 			}
 		}
-		return t;
+		return true;
 	}
+
 	// 3. Write a static method called charArraySorted.
 	// This method takes in an array of characters
 	// and it returns a boolean.
@@ -43,13 +38,12 @@ public class _00_SortedArrayChecker {
 	// array is in alphabetical order and false otherwise
 	// (You can compare characters just like integers)
 	static boolean charArraySorted(char[] array) {
-		boolean t = false;
-		for (int i = 0; i < array.length; i++) {
-			if (array[i] > array[i + 1]) {
-				t = true;
+		for (int i = 1; i < array.length; i++) {
+			if (array[i] < array[i - 1]) {
+				return false;
 			}
 		}
-		return t;
+		return true;
 	}
 
 	// 4. Write a static method called stringArraySorted.
@@ -59,13 +53,11 @@ public class _00_SortedArrayChecker {
 	// array is in alphabetical order and false otherwise
 	// (Use the compareTo(String) method)
 	static boolean stringArraySorted(String[] array) {
-		boolean t = false;
-		String wow;
-		for (int i = 0; i < array.length; i++) {
-		//	if (array[i].compareTo(array[i])) {
-		//		t = true;
-		//	}
+		for (int i = 1; i < array.length; i++) {
+			if (array[i].compareTo(array[i-1]) < 0) {
+				return false;
+			}
 		}
-		return t;
+		return true;
 	}
 }
