@@ -21,26 +21,27 @@ public class _03_ExponentialSearch {
 		//    	counter is less than the length of the array,
 		//		and the array element at counter is less than or equal to value
 		while (counter <array.length && array[counter]<=value) {
-		value =	value *2;
-		}
 			//5. inside the while loop, double the value of counter.
-
+		counter = counter *2;
+		}
 		//6. create an integer called minimum
 		int minimum;
 		//7. if counter is less than the length of the array,
 		//   set minimum equal to counter
-		if (counter <array.length) {
+		if (counter < array.length) {
 			minimum = counter;
+		} else  {
+		//8. otherwise, set minimum equal to the length of the array minus 1.	
+			minimum = array.length -1;
 		}
-		//8. otherwise, set minimum equal to the length of the array minus 1.
-		minimum = array.length -1;
 		//9. use the binary search method you wrote using the following parameters:
 		//		the array to be searched
 		//		half of the counter
 		//		minimum
 		//		the value to be found
-		
+		_01_BinarySearch b = new _01_BinarySearch();
+		int num = b.binarySearch(array, counter/2, minimum, value);
 		//10. return the result
-		return 0;
+		return num;
 	}
 }

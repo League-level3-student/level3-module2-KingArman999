@@ -13,15 +13,15 @@ public class SelectionSorter extends Sorter {
 		// element of the array
 		int index;
 		for (int i = 0; i < array.length - 1; i++) {
-				index = i;
+			index = i;
 			for (int j = i + 1; j < array.length; j++) {
 				if (array[j] < array[index]) {
 					index = j;
 				}
-				int num  = array[index];
-				array[index] = array[i];
-				array[i] = num;
 			}
+			int num = array[index];
+			array[index] = array[i];
+			array[i] = num;
 		}
 		// 2. create an integer called index and set it equal to i
 		// 3. make another for loop that starts at i + 1 and
